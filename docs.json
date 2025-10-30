@@ -20,19 +20,20 @@
       "name": "Portal",
       "icon": "house",
       "url": "https://portal.crosspurpose.org"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github", 
+      "url": "https://github.com/sabreil/docs"
     }
   ],
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Programs",
         "groups": [
           {
-            "group": "Getting Started",
-            "pages": ["index", "quickstart"]
-          },
-          {
-            "group": "CrossPurpose",
+            "group": "Emergency Assistance",
             "pages": ["cp/SNAP-Assistance"]
           }
         ]
@@ -40,6 +41,7 @@
     ]
   },
   "footerSocials": {
-    "github": "https://github.com/sabreil/docs"
+    "github": "https://github.com/sabreil/docs",
+    "linkedin": "https://www.linkedin.com/company/luminancellc"
   }
 }
