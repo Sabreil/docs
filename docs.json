@@ -1,10 +1,9 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "Luminance LLC",
-  "theme": "mint",
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Luminance LLC", 
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -12,89 +11,34 @@
     "light": "#a78bfa",
     "dark": "#6d28d9"
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:support@luminancellc.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Portal",
-    "url": "https://portal.crosspurpose.org"
+  "topbar": {
+    "style": "default"
   },
   "anchors": [
     {
-      "name": "CrossPurpose Portal",
+      "name": "Portal",
       "icon": "house",
       "url": "https://portal.crosspurpose.org"
-    },
-    {
-      "name": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/sabreil/docs"
     }
   ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "index",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "CrossPurpose Programs",
-      "pages": [
-        "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
-      ]
-    },
-    {
-      "group": "Customization",
-      "pages": [
-        "essentials/settings",
-        "essentials/navigation"
-      ]
-    },
-    {
-      "group": "Writing Content",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "AI Tools",
-      "pages": [
-        "ai-tools/cursor",
-        "ai-tools/claude-code",
-        "ai-tools/windsurf"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/introduction",
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete",
-        "api-reference/endpoint/webhook"
-      ]
-    }
-  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["index", "quickstart"]
+          },
+          {
+            "group": "CrossPurpose",
+            "pages": ["cp/SNAP-Assistance"]
+          }
+        ]
+      }
+    ]
+  },
   "footerSocials": {
-    "github": "https://github.com/sabreil",
-    "linkedin": "https://linkedin.com/company/luminancellc",
-    "twitter": "https://twitter.com/luminancellc"
-  },
-  "feedback": {
-    "thumbsRating": true,
-    "suggestEdit": true,
-    "raiseIssue": true
-  },
-  "search": {
-    "prompt": "Search documentation..."
+    "github": "https://github.com/sabreil/docs"
   }
 }
