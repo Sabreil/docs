@@ -1,0 +1,225 @@
+---
+title: "Quick Start Guide"
+description: "Get up and running with the Cross Purpose Client Portal quickly"
+---
+
+# Quick Start Guide
+
+This guide will help you get started with the Cross Purpose Client Portal, whether you're a participant, coach, or administrator.
+
+## For Participants
+
+### 1. First Login
+<Steps>
+  <Step title="Receive Your Invitation">
+    You'll receive an email invitation with a link to set up your account
+  </Step>
+  <Step title="Create Your Password">
+    Click the link in the email and create a secure password
+  </Step>
+  <Step title="Complete Your Profile">
+    Fill out your basic profile information
+  </Step>
+  <Step title="Start Your Journey">
+    Begin exploring your personalized dashboard
+  </Step>
+</Steps>
+
+### 2. Dashboard Overview
+
+Your dashboard includes:
+
+<CardGroup cols={2}>
+  <Card title="Current Phase" icon="map-marker">
+    See where you are in your journey
+  </Card>
+  <Card title="Next Steps" icon="list-check">
+    View upcoming tasks and milestones
+  </Card>
+  <Card title="Messages" icon="envelope">
+    Communicate with your coach
+  </Card>
+  <Card title="Resources" icon="book">
+    Access learning materials and tools
+  </Card>
+</CardGroup>
+
+### 3. Key Features
+
+<Accordion title="Explorer Modules">
+  Interactive learning modules covering:
+  - Career exploration
+  - Skills assessment
+  - Goal setting
+  - Job readiness
+</Accordion>
+
+<Accordion title="Request Assistance">
+  Get help with:
+  - SNAP application support
+  - Emergency assistance
+  - Resource connections
+  - Schedule adjustments
+</Accordion>
+
+## For Coaches
+
+### 1. Access Your Roster
+
+Navigate to the Coach Dashboard to:
+- View all assigned participants
+- Filter by phase or status
+- Search for specific participants
+- See recent activity
+
+### 2. Common Tasks
+
+<Tabs>
+  <Tab title="Submit Forms">
+    - Initial coaching sessions
+    - Follow-up check-ins
+    - Career development plans
+    - No Longer Pursuing forms
+  </Tab>
+  <Tab title="Track Progress">
+    - View participant phases
+    - Monitor completion rates
+    - Check achievement milestones
+    - Review assessment results
+  </Tab>
+  <Tab title="Approve Requests">
+    - SNAP assistance requests
+    - Vacation mode requests
+    - Schedule adjustments
+    - Support services
+  </Tab>
+</Tabs>
+
+### 3. Best Practices
+
+<Note>
+  **Regular Check-ins**: Schedule weekly or bi-weekly meetings with each participant to maintain momentum and engagement.
+</Note>
+
+<Tip>
+  **Use Impersonation**: The impersonation feature allows you to view the portal exactly as your participant sees it, making it easier to provide support.
+</Tip>
+
+<Warning>
+  **Phase Transitions**: Always verify that coaching forms are properly submitted to ensure accurate phase calculations.
+</Warning>
+
+## For Administrators
+
+### 1. System Overview
+
+Access the admin dashboard at `/admin/dashboard` for:
+- System-wide analytics
+- User management
+- Salesforce sync status
+- Error monitoring
+
+### 2. Key Admin Functions
+
+| Function | Location | Purpose |
+|----------|----------|---------|
+| Analytics | `/admin/analytics/overview` | View participant progression and program metrics |
+| Salesforce Audit | `/admin/salesforce-audit-v2` | Check sync status and troubleshoot issues |
+| Participant Management | `/admin/participants` | Manage users, roles, and permissions |
+| Phase Auditing | `/admin/phase-audit` | Verify phase calculations and fix discrepancies |
+
+### 3. Common Admin Tasks
+
+<AccordionGroup>
+  <Accordion title="Adding New Users">
+    1. Navigate to User Management
+    2. Click "Add New User"
+    3. Enter user details and assign role
+    4. Set coach assignment (for participants)
+    5. Send invitation email
+  </Accordion>
+
+  <Accordion title="Troubleshooting Sync Issues">
+    1. Check Salesforce Audit dashboard
+    2. Review error logs for specific participant
+    3. Use "Force Sync" if needed
+    4. Verify Salesforce credentials
+    5. Check API rate limits
+  </Accordion>
+
+  <Accordion title="Running Reports">
+    1. Go to Analytics section
+    2. Select report type
+    3. Set date range and filters
+    4. Export as CSV or PDF
+    5. Schedule recurring reports (optional)
+  </Accordion>
+</AccordionGroup>
+
+## Technical Setup (Developers)
+
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/CP-client-portal.git
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Run database migrations
+npx prisma migrate dev
+
+# Seed the database (optional)
+npx prisma db seed
+
+# Start the development server
+npm run dev
+```
+
+### Environment Variables
+
+<CodeGroup>
+```bash Required Variables
+DATABASE_URL="your-postgresql-connection-string"
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key"
+```
+
+```bash Salesforce Integration
+SALESFORCE_CLIENT_ID="your-salesforce-client-id"
+SALESFORCE_CLIENT_SECRET="your-salesforce-client-secret"
+SALESFORCE_USERNAME="your-salesforce-username"
+SALESFORCE_PASSWORD="your-salesforce-password"
+SALESFORCE_SECURITY_TOKEN="your-salesforce-security-token"
+```
+
+```bash Email & Notifications
+RESEND_API_KEY="your-resend-api-key"
+FROM_EMAIL="noreply@crosspurpose.org"
+```
+</CodeGroup>
+
+## Next Steps
+
+<CardGroup cols={3}>
+  <Card title="Explore Programs" icon="graduation-cap" href="/cp/SNAP-Assistance">
+    Learn about available assistance programs
+  </Card>
+  <Card title="Phase System" icon="stairs" href="/cp/phase-system">
+    Understand the participant journey phases
+  </Card>
+  <Card title="API Docs" icon="code" href="/cp/api-reference">
+    Technical API documentation
+  </Card>
+</CardGroup>
+
+---
+
+<Info>
+  Need more help? Check out the detailed user guides for [Participants](/cp/participants), [Coaches](/cp/coaches), or [Administrators](/cp/administrators).
+</Info>
+

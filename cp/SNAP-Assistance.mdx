@@ -1,961 +1,211 @@
 ---
-title: '🍎 SNAP Emergency Assistance'
-description: 'Complete guide for program team to deploy $100 emergency payments to SNAP-verified Launch participants'
-icon: 'apple-whole'
+title: "SNAP Emergency Assistance Program"
+description: "Complete guide to the SNAP Emergency Assistance Program for Cross Purpose participants"
 ---
 
-<Warning>
-**⏰ DEADLINE: November 4 at 5:00 PM**
+# SNAP Emergency Assistance Program
 
-Applications close in less than a week. Participants need to complete W-9 and bank information forms to receive assistance.
-</Warning>
-
-<Note>
-**What Is This Program?**
-
-A **one-time $100 emergency payment** to help SNAP-verified Launch participants during November 2024 when food stamp payments are delayed. This program provides immediate financial relief to 133 eligible families during a critical time.
-</Note>
+The SNAP Emergency Assistance Program provides crucial support to participants facing food insecurity during their journey through the Cross Purpose program.
 
 ## Overview
 
-<CardGroup cols={2}>
-  <Card title="👥 For Participants" icon="users">
-    **Simple 10-minute process:**
-    - Receive personalized email
-    - Complete W-9 tax form (3 min)
-    - Submit bank information (5 min)
-    - Get $100 direct deposit
-  </Card>
+This program offers:
+- Emergency SNAP application assistance
+- Support for participants in Job Readiness and Supervised Job Search phases
+- Verification and tracking of SNAP status
+- Coordination with coaches and participants
 
-  <Card title="👨‍💼 For Program Staff" icon="briefcase">
-    **Easy 3-step workflow:**
-    - Send bulk email notification
-    - Monitor completion rates
-    - Process payments via finance team
-  </Card>
-</CardGroup>
+## Eligibility
 
----
+Participants are eligible when they are in:
+- **Job Readiness Phase**: Actively preparing for employment
+- **Supervised Job Search Phase**: Actively seeking employment
 
-## 👥 Eligibility Requirements
+## Program Flow
 
-<Info>
-**133 participants currently eligible** *(As of October 29, 2024)*
+### 1. Participant Request
+Participants can request SNAP assistance through:
+- The Explorer dashboard
+- Direct communication with their coach
+- The participant portal's assistance section
 
-This number updates automatically every night at 2:00 AM during Salesforce sync.
-</Info>
+### 2. Verification Process
+The system verifies:
+- Current participant phase (Job Readiness or Supervised Job Search)
+- SNAP application status
+- Previous assistance requests
 
-Participants must meet **ALL** of these criteria:
+### 3. Support Delivery
+Once approved:
+- Participant receives guidance on SNAP application
+- Coach is notified of the request
+- Status is tracked in Salesforce
+- Follow-up notifications are sent
 
-| Requirement | Details |
-|------------|---------|
-| **SNAP Verified** | Automatically checked from Salesforce nightly via `Confirmed_SNAP__c` field |
-| **Active Phase** | Must be enrolled in one of these phases: |
-|  | • Job Foundations |
-|  | • Job Readiness |
-|  | • Job Launch |
-|  | • GED |
+## For Coaches
 
-<Tip>
-The eligibility list refreshes automatically each night. New SNAP verifications in Salesforce will be reflected the next morning.
-</Tip>
-
----
-
-## 📧 How to Send Emails
-
-<Steps>
-  <Step title="Access the Admin Dashboard">
-    Navigate to `/admin/snap-assistance-notification` in the portal.
+<AccordionGroup>
+  <Accordion title="Viewing SNAP Requests">
+    Coaches can view all SNAP assistance requests in their dashboard under the "Participant Support" section.
     
-    **You'll see:**
-    - Total eligible count (133 currently)
-    - Complete participant list with names and emails
-    - Send test and bulk email buttons
-  </Step>
+    Each request shows:
+    - Participant name and current phase
+    - Request date
+    - Current status
+    - Any notes or updates
+  </Accordion>
 
-  <Step title="Send a Test Email First">
-    <Warning>
-    **ALWAYS test before sending to participants!** Review on both desktop and mobile devices.
-    </Warning>
-
-    1. Email box shows: `richardmichalka@gmail.com`
-    2. Click **"Send Test"**
-    3. Check your inbox *(arrives in ~30 seconds)*
-    4. Review design on **desktop AND mobile**
-    5. Verify all links work correctly
+  <Accordion title="Processing Requests">
+    To process a SNAP assistance request:
     
-    <Check>
-    Test email should display CrossPurpose logo, clear messaging, and working CTA button.
-    </Check>
-  </Step>
+    1. Review the participant's eligibility
+    2. Verify their current phase
+    3. Contact the participant to discuss their situation
+    4. Guide them through the SNAP application process
+    5. Update the request status in the system
+  </Accordion>
 
-  <Step title="Send to All Participants">
-    Once testing is complete:
-    
-    1. Click **"Send to [133] Participants"**
-    2. Confirm in the popup dialog
-    3. Emails send immediately
-    
-    <Tip>
-    The system handles everything automatically - no manual email management needed!
-    </Tip>
-  </Step>
-</Steps>
+  <Accordion title="Tracking Completion">
+    Mark requests as complete when:
+    - The participant has successfully applied for SNAP
+    - Documentation is received
+    - The request is synced with Salesforce
+  </Accordion>
+</AccordionGroup>
 
----
-
-## 🔄 The Participant Journey
+## For Administrators
 
 <Tabs>
-  <Tab title="📧 Email Experience">
-    **What They Receive:**
+  <Tab title="System Configuration">
+    The SNAP assistance system is configured through:
     
-    - **From:** CrossPurpose Launch (`explorer@crosspurpose.org`)
-    - **Subject:** 🍎 Emergency Assistance Available: Request Your $100 Today
-    
-    **Email Design:**
-    - CrossPurpose logo header
-    - Warm, professional hero image
-    - Clear $100 assistance message
-    - Big red "Request My $100 Assistance" button
-    - Prominent deadline reminder
+    - **Database**: PostgreSQL with Prisma ORM
+    - **API Endpoints**: RESTful API at `/api/snap-assistance`
+    - **Salesforce Integration**: Automatic sync of assistance records
+    - **Email Notifications**: Automated via Resend
   </Tab>
-
-  <Tab title="🎯 Portal Experience">
-    **Step-by-Step Process:**
+  
+  <Tab title="Monitoring">
+    Monitor the system through:
     
-    1. Click email button → Opens portal
-    2. Login with normal credentials
-    3. See welcome page with apple icon 🍎
-    4. Read clear explanation + requirements
-    5. Click "Get Started" button
-    6. Complete W-9 form (Track1099)
-    7. Fill bank information (TFA Forms)
-    8. E-sign at bottom of form
-    9. Confirm submission with checkbox
-    10. See success screen ✅
-    
-    <Check>
-    Banner disappears after completion - prevents duplicate requests.
-    </Check>
+    - Admin dashboard analytics
+    - Salesforce reports
+    - Database queries for completion rates
+    - Email delivery logs
   </Tab>
-
-  <Tab title="⚙️ Behind the Scenes">
-    **Automated System Flow:**
+  
+  <Tab title="Troubleshooting">
+    Common issues and solutions:
     
-    | Event | Action | Visible To |
-    |-------|--------|------------|
-    | Email sent | Portal identifies user via link | System |
-    | W-9 completed | Auto-saves + Salesforce syncs | System |
-    | Bank form submitted | Logged in database | System |
-    | Request marked complete | Banner disappears | Participant |
-    | Finance notified | Submission in TFA Forms | Finance Team |
-    | Payment processed | Sent to bank account | Participant |
-    
-    <Info>
-    All Salesforce updates happen in the background - participants don't wait for syncing.
-    </Info>
+    | Issue | Solution |
+    |-------|----------|
+    | Request not syncing to Salesforce | Check Salesforce API connection and credentials |
+    | Email not sending | Verify Resend API key and email templates |
+    | Participant not eligible | Verify phase calculation logic |
+    | Duplicate requests | Check deduplication logic in submission handler |
   </Tab>
 </Tabs>
 
----
-
-## 📄 Form Details
-
-### W-9 Tax Form
-
-<Card title="Track1099/Avalara Integration" icon="file-contract">
-Professional tax form service (owned by Avalara, a major tax company)
-</Card>
-
-**Process:**
-```
-Click "Complete W-9" 
-    ↓
-Secure Track1099 form opens
-    ↓
-Participant fills:
-  • Name
-  • Address  
-  • Social Security Number
-  • Tax classification
-    ↓
-Takes ~3 minutes
-    ↓
-Auto-saves to database + Salesforce
-```
-
-<Info>
-**Why W-9 Required?**
-
-IRS mandates W-9 forms for any payments over $600/year. This is standard for all financial assistance programs.
-</Info>
-
-### Bank Account Information
-
-<Card title="TFA Forms Integration" icon="building-columns">
-Secure direct deposit form with e-signature capability
-</Card>
-
-**Required Fields:**
-- First name, last name
-- Email address
-- Bank routing number *(9 digits)*
-- Account number
-- **E-signature** *(must scroll to bottom and sign)*
-
-<Warning>
-**Critical:** Participants must scroll to the bottom and sign electronically. The form won't be valid without the e-signature!
-</Warning>
-
-**Alternative Option:**
-
-<Tip>
-Participants without bank accounts can click "Don't have a bank account?" to request a gift card instead.
-</Tip>
-
----
-
-## 💰 Finance Team Processing
-
-<CardGroup cols={2}>
-  <Card title="🏦 Direct Deposit Form" icon="money-bill-transfer" href="https://www.tfaforms.com/5201110">
-    For participants with bank accounts
-  </Card>
-
-  <Card title="🎁 Gift Card Form" icon="gift" href="https://www.tfaforms.com/5201192">
-    For participants without bank accounts
-  </Card>
-</CardGroup>
-
-### Submission Data
-
-Each submission includes:
-
-| Field | Description |
-|-------|-------------|
-| 👤 **Name** | Full legal name from W-9 |
-| 📧 **Email** | Contact email address |
-| 🔢 **Routing Number** | 9-digit bank routing number |
-| 💰 **Account Number** | Bank account number |
-| ✍️ **E-Signature** | Legally binding electronic signature |
-
-### Processing Workflow
-
-<Steps>
-  <Step title="Export Submissions">
-    Download all submissions from TFA Forms dashboard (export feature available).
-  </Step>
-
-  <Step title="Verify Data">
-    Ensure each submission has all required fields completed and e-signature present.
-  </Step>
-
-  <Step title="Process Payments">
-    Process direct deposits through your payment system. Handle gift card requests separately.
-  </Step>
-
-  <Step title="Confirm Delivery">
-    Track payment delivery and handle any issues or returns.
-  </Step>
-</Steps>
-
----
-
-## ❓ Frequently Asked Questions
-
-<AccordionGroup>
-  <Accordion title="💳 What if someone doesn't have a bank account?" icon="circle-question">
-    <Tip>
-    **Gift Card Alternative Available**
-    </Tip>
-
-    Participants can click "Don't have a bank account? Click here" to access an alternative form.
-    
-    - Takes them to gift card request form
-    - Finance team processes manually
-    - Same $100 amount
-  </Accordion>
-
-  <Accordion title="🔄 Can someone request this twice?" icon="rotate">
-    <Warning>
-    **NO - System Prevents Duplicates**
-    </Warning>
-
-    Multiple safeguards prevent duplicate requests:
-    
-    | Prevention Method | How It Works |
-    |------------------|--------------|
-    | Database Flag | Marked complete after submission |
-    | Banner Removal | Disappears from dashboard |
-    | Email List | Won't be emailed again |
-    | Submit Block | System rejects duplicate attempts |
-  </Accordion>
-
-  <Accordion title="⏸️ What if they start but don't finish?" icon="pause">
-    <Check>
-    **Progress is Automatically Saved**
-    </Check>
-
-    - Can close browser and return later
-    - Banner stays visible until completion
-    - W-9 completion saved automatically
-    - Pick up exactly where they left off
-    - No time limit to complete
-  </Accordion>
-
-  <Accordion title="✅ How do we verify TFA form submission?" icon="check-double">
-    **Multi-Layer Verification:**
-
-    1. **Required checkbox** - "I confirm I submitted the form"
-    2. **Disabled button** - Can't submit without checking box
-    3. **Finance verification** - Check TFA Forms backend
-    4. **Fraud detection** - Caught during verification process
-    
-    <Info>
-    Finance team has final verification authority through TFA Forms dashboard.
-    </Info>
-  </Accordion>
-
-  <Accordion title="📄 Why is the W-9 required?" icon="file-invoice">
-    **IRS Compliance Requirements:**
-
-    | Aspect | Details |
-    |--------|---------|
-    | Legal Requirement | IRS mandates for payments >$600/year |
-    | Provider | Track1099 (Avalara subsidiary) |
-    | Security | Bank-grade encryption |
-    | Expiration | 3 years (IRS standard) |
-    | Integration | Auto-syncs to Salesforce Leader File |
-    
-    <Check>
-    This is the same process used by major corporations for contractor payments.
-    </Check>
-  </Accordion>
-
-  <Accordion title="⏱️ How long does the process take?" icon="clock">
-    **Time Estimates:**
-
-**For Participants:**
-
-| Task | Duration |
-|------|----------|
-| Email to completion | ~10 minutes total |
-| W-9 form | ~3 minutes |
-| Bank form | ~5 minutes |
-| E-signature | ~2 minutes |
-
-**For Program Staff:**
-
-| Task | Duration |
-|------|----------|
-| Sending emails | ~2 minutes |
-| Processing payments | Varies by system |
-| Verifying in TFA | ~5 minutes per batch |
-  </Accordion>
-</AccordionGroup>
-
----
-
-## 📊 Tracking & Reporting
-
-### Real-Time Dashboard
-
-<Card title="Admin Dashboard" icon="chart-line" href="/admin/snap-assistance-notification">
-  Access live data on eligible participants, completion status, and email delivery
-</Card>
-
-**Live Metrics:**
-
-| Metric | Description |
-|--------|-------------|
-| 📈 **Total Count** | Auto-updates from Salesforce nightly |
-| 📋 **Participant List** | Names, emails, phases |
-| 🎯 **Current Phase** | Job status for each participant |
-| 👨‍🏫 **Coach Assignment** | Assigned coach per participant |
-
-### CSV Export
-
-<Tip>
-**Pre-Generated Export Available**
-
-File: `snap-job-ged-list-2025-10-29.csv`
-</Tip>
-
-**Export includes:**
-- Name, Email, Phone
-- Current Phase
-- Coach Name & Email
-- SNAP Confirmed Date
-
-**Generate updated list:**
-
-```bash
-npx tsx scripts/get-snap-job-ged-list.ts
-```
-
-### Analytics Script
-
-**Run statistics:**
-
-```bash
-npx tsx scripts/check-snap-count-change.ts
-```
-
-**Shows:**
-- Total SNAP confirmed participants
-- Phase breakdown (count per phase)
-- Completed requests
-- Pending email notifications
-
----
-
-## ⏰ Timeline & Important Dates
-
-<Warning>
-**Active Period: Now → November 4 at 5:00 PM**
-
-Applications close in less than a week. Ensure all eligible participants receive email notifications promptly.
-</Warning>
-
-### Nightly Auto-Sync
-
-**Every night at 2:00 AM:**
-
-```
-Salesforce Sync Initiates
-    ↓
-SNAP Verification Status Updated
-    ↓
-Eligible Participant List Refreshed
-    ↓
-New Verifications Added Automatically
-    ↓
-Updated Count Visible Next Morning
-```
-
-<Info>
-**What Updates Automatically:**
-- SNAP verification status
-- Eligible participant count
-- Participant phase information
-- Fresh data every morning
-</Info>
-
-### After Deadline
-
-<Warning>
-**November 4 at 5:00 PM - Applications Close**
-</Warning>
-
-- Deadline passed - no new submissions
-- Banner shows closure message
-- Late submissions handled case-by-case
-- Program team makes final decisions
-
----
-
-## 🚨 Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="🚫 Participant doesn't see banner" icon="eye-slash">
-    **Diagnostic Checklist:**
-
-    <Steps>
-      <Step title="Verify SNAP Status">
-        Check Salesforce `Confirmed_SNAP__c` field - must be `true`
-      </Step>
-
-      <Step title="Confirm Phase">
-        Must be in Job Foundations, Job Readiness, Job Launch, or GED phase
-      </Step>
-
-      <Step title="Check Completion Status">
-        Verify they haven't already submitted request
-      </Step>
-
-      <Step title="Verify Dashboard Access">
-        Must be on `/dashboard/explorer` (not legacy dashboard)
-      </Step>
-    </Steps>
-
-    **Solutions:**
-    - Run nightly sync manually, OR
-    - Update SNAP status in Salesforce directly
-  </Accordion>
-
-  <Accordion title="📝 Can't complete W-9" icon="file-circle-xmark">
-    **Common Issues & Solutions:**
-
-    | Problem | Solution |
-    |---------|----------|
-    | Browser blocks popup | Enable popups for portal domain |
-    | Ad blocker interference | Disable ad blocker temporarily |
-    | Outdated browser | Use latest Chrome/Firefox/Safari |
-    | Form won't load | Clear cache and cookies |
-
-    <Tip>
-    **Workaround:** Coaches can help participants complete W-9 separately through admin portal.
-    </Tip>
-  </Accordion>
-
-  <Accordion title="⚠️ TFA Forms won't load" icon="triangle-exclamation">
-    **Quick Fixes:**
-
-    1. ✓ Check internet connection
-    2. ✓ Try different browser (Chrome recommended)
-    3. ✓ Clear cache & cookies
-    4. ✓ Verify on `/snap-assistance` page (not modal)
-    5. ✓ Disable browser extensions
-    6. ✓ Try incognito/private mode
-  </Accordion>
-
-  <Accordion title="❌ Finance can't find submission" icon="magnifying-glass">
-    **Verification Steps:**
-
-    <Steps>
-      <Step title="Confirm Submission">
-        Ask participant if they clicked final "Submit" button on TFA form
-      </Step>
-
-      <Step title="Check TFA Dashboard">
-        Search TFA Forms backend for participant name/email
-      </Step>
-
-      <Step title="Verify Checkbox">
-        Confirm they checked the confirmation checkbox
-      </Step>
-
-      <Step title="Database Check">
-        Look at portal database for completion flag
-      </Step>
-    </Steps>
-
-    <Info>
-    Most "missing" submissions are incomplete - participant didn't click final submit button.
-    </Info>
-  </Accordion>
-</AccordionGroup>
-
----
-
-## 🎨 Technical Implementation
+## Technical Implementation
 
 ### Database Schema
 
 ```sql
--- SNAP Verification Status
-confirmedSNAP = true
-
--- Assistance Request Completion  
-snapEmergencyAssistanceCompleted = true
-snapEmergencyAssistanceCompletedAt = [timestamp]
+model SNAPAssistanceCompletion {
+  id            String   @id @default(cuid())
+  participantId String
+  participant   User     @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  completedAt   DateTime @default(now())
+  salesforceId  String?  // Supportive Service record ID
+  notes         String?
+  
+  @@index([participantId])
+  @@index([completedAt])
+}
 ```
 
-### Application Routes
-
-| Route | Purpose | Access Level |
-|-------|---------|--------------|
-| `/admin/snap-assistance-notification` | Email admin dashboard | Admin/Coach |
-| `/snap-assistance` | Participant request flow | Participant |
-| `/dashboard/explorer` | Banner display location | Participant |
-
-### API Endpoints
+### Key API Endpoints
 
 <CodeGroup>
+```typescript GET /api/snap-assistance/status
+// Check if participant is eligible and hasn't already completed
+GET /api/snap-assistance/status?participantId={id}
 
-```bash GET /api/snap-assistance/status
-# Check participant eligibility
-curl https://portal.crosspurpose.org/api/snap-assistance/status
+Response:
+{
+  "eligible": boolean,
+  "currentPhase": string,
+  "hasCompleted": boolean,
+  "completedAt": string | null
+}
 ```
 
-```bash GET /api/snap-assistance/send-notification  
-# Get eligible participant list
-curl https://portal.crosspurpose.org/api/snap-assistance/send-notification
-```
+```typescript POST /api/snap-assistance/complete
+// Mark SNAP assistance as completed
+POST /api/snap-assistance/complete
 
-```bash POST /api/snap-assistance/complete
-# Mark request as complete
-curl -X POST https://portal.crosspurpose.org/api/snap-assistance/complete
-```
+Body:
+{
+  "participantId": string,
+  "notes": string
+}
 
-```bash POST /api/snap-assistance/send-notification
-# Send bulk emails
-curl -X POST https://portal.crosspurpose.org/api/snap-assistance/send-notification
+Response:
+{
+  "success": boolean,
+  "salesforceId": string,
+  "completedAt": string
+}
 ```
-
 </CodeGroup>
 
-### External Services
+## Salesforce Integration
 
-| Service | Purpose | Integration Type |
-|---------|---------|------------------|
-| 📧 **Brevo** | Email delivery | SMTP API |
-| 📄 **Track1099** | W-9 tax forms | Embedded iframe + API |
-| 📝 **TFA Forms** | Bank info forms | Embedded forms |
-| ☁️ **Salesforce** | SNAP verification | Nightly batch sync |
+SNAP assistance completions are automatically synced to Salesforce as **Supportive Service** records with:
 
----
+- **Service Type**: "SNAP Application Assistance"
+- **Status**: "Completed"
+- **Related Contact**: Participant's Salesforce Contact ID
+- **Completion Date**: Timestamp of completion
 
-## ✅ Success Metrics
+## Email Notifications
 
-### Key Tracking Metrics
+Automated emails are sent for:
 
-| # | Metric | Data Source |
-|---|--------|-------------|
-| 1️⃣ | Email Open Rate | Brevo dashboard |
-| 2️⃣ | Click-Through Rate | Brevo analytics |
-| 3️⃣ | W-9 Completions | Database query |
-| 4️⃣ | Bank Form Submissions | TFA Forms count |
-| 5️⃣ | Payments Processed | Finance records |
-| 6️⃣ | Avg Completion Time | Timestamp analysis |
+1. **Participant Confirmation**: When SNAP assistance is marked complete
+2. **Coach Notification**: When a participant requests assistance
+3. **Admin Alert**: For system errors or failed syncs
 
-### Expected Conversion Funnel
-
-| Stage | Expected Rate | Notes |
-|-------|--------------|-------|
-| 📧 **Email Open** | 40-60% | Typical for transactional emails |
-| 🔘 **Click-Through** | 60-80% of opens | High because of financial incentive |
-| 🚀 **Start Process** | 80-90% of clicks | Most who click will start |
-| 📝 **Complete W-9** | 90-95% of starts | Straightforward form |
-| 🏦 **Submit Bank Info** | 95-98% of W-9s | Final step completion |
-| 💵 **Successful Payment** | 98-100% | Nearly all valid submissions succeed |
-
-### Impact Projection
-
-<CardGroup cols={3}>
-  <Card title="👨‍👩‍👧‍👦 Families" icon="people-group">
-    **133** eligible families
-  </Card>
-
-  <Card title="💵 Per Family" icon="dollar-sign">
-    **$100** each
-  </Card>
-
-  <Card title="💰 Total Impact" icon="sack-dollar">
-    **$13,300** distributed
-  </Card>
-</CardGroup>
-
-<Check>
-**Expected Completion:** ~80 families (~$8,000 total)
-
-Based on typical completion rates for similar emergency assistance programs.
-</Check>
-
----
-
-## 💬 Participant Communication
-
-### Talking Points
-
-<Tabs>
-  <Tab title="What It Is">
-    *"We're offering a one-time $100 payment to help with food and essentials since SNAP payments are delayed."*
-    
-    <Tip>
-    Keep it simple and focused on the immediate benefit.
-    </Tip>
-  </Tab>
-
-  <Tab title="How Easy">
-    *"It's super easy - just takes about 10 minutes online. You'll fill out a tax form and give us your bank info."*
-    
-    <Info>
-    Emphasize the short time commitment to reduce hesitation.
-    </Info>
-  </Tab>
-
-  <Tab title="Security">
-    *"It's completely safe and secure - same companies that banks use. Your information is encrypted."*
-    
-    <Check>
-    Address security concerns proactively - many participants will worry about sharing financial info.
-    </Check>
-  </Tab>
-
-  <Tab title="Payment Method">
-    *"You'll get the money in your bank account. If you don't have a bank account, we can send a gift card instead."*
-    
-    <Tip>
-    Always mention the gift card option so people without bank accounts don't feel excluded.
-    </Tip>
-  </Tab>
-
-  <Tab title="Deadline">
-    *"The deadline is November 4 at 5 PM, so don't wait!"*
-    
-    <Warning>
-    Create urgency without causing panic.
-    </Warning>
-  </Tab>
-
-  <Tab title="How to Access">
-    *"Just check your email - we sent you a link. Or login to your portal and you'll see a banner."*
-    
-    <Info>
-    Provide multiple access paths for different user preferences.
-    </Info>
-  </Tab>
-</Tabs>
-
----
-
-## 🎯 Coach Guidelines
-
-### Pre-Launch Checklist
+## Resources
 
 <CardGroup cols={2}>
-  <Card title="Before Sending" icon="list-check">
-    - ☑️ Verify eligible list (133 people)
-    - ☑️ Send test email
-    - ☑️ Check on desktop + mobile
-    - ☑️ Confirm finance team ready
-    - ☑️ Brief all coaches
+  <Card title="User Flow Documentation" icon="diagram-project" href="/cp/snap-user-flow">
+    Detailed user journey and interaction flows
   </Card>
-
-  <Card title="After Sending" icon="clipboard-check">
-    - 📊 Monitor completion rates
-    - 📞 Follow up non-completers
-    - 🤝 Help with tech issues
-    - ✉️ Answer questions
-    - 🎉 Celebrate impact!
+  
+  <Card title="Setup Guide" icon="screwdriver-wrench" href="/cp/snap-setup">
+    Technical setup and configuration instructions
   </Card>
-</CardGroup>
-
-### Common Participant Questions
-
-<AccordionGroup>
-  <Accordion title="❓ Is this a scam?" icon="shield-check">
-    **Answer:** No! It's from CrossPurpose - check the email address (`explorer@crosspurpose.org`) and the portal website you normally use. This is a legitimate emergency assistance program.
-    
-    <Tip>
-    Point participants to familiar branding and domain names they recognize.
-    </Tip>
-  </Accordion>
-
-  <Accordion title="❓ Why do I need to fill out a W-9?" icon="file-lines">
-    **Answer:** The IRS requires it for any financial assistance. It's just like when you start a new job! We have to report payments over a certain amount.
-    
-    <Info>
-    Compare to familiar situations (new job) to make it feel less intimidating.
-    </Info>
-  </Accordion>
-
-  <Accordion title="❓ Is my information safe?" icon="lock">
-    **Answer:** Absolutely! We use professional services (Track1099 is owned by Avalara, a huge tax company). Everything is encrypted using bank-level security.
-    
-    <Check>
-    Mention recognizable company names to build trust.
-    </Check>
-  </Accordion>
-
-  <Accordion title="❓ When will I get the money?" icon="calendar-clock">
-    **Answer:** After our finance team reviews your submission, which happens within a few days of submitting. Direct deposits typically process within 3-5 business days.
-    
-    <Tip>
-    Set realistic expectations while maintaining excitement.
-    </Tip>
-  </Accordion>
-
-  <Accordion title="❓ Can I get this more than once?" icon="repeat">
-    **Answer:** This is a one-time emergency payment for November 2024 to help during the SNAP payment delays.
-    
-    <Info>
-    Be clear about one-time nature to prevent disappointment.
-    </Info>
-  </Accordion>
-
-  <Accordion title="❓ I don't have a bank account" icon="building-columns">
-    **Answer:** Click the "Don't have a bank account?" link and we'll send you a gift card instead! Same $100, different delivery method.
-    
-    <Check>
-    Make sure participants know they have options.
-    </Check>
-  </Accordion>
-</AccordionGroup>
-
----
-
-## 📞 Support Contacts
-
-<CardGroup cols={2}>
-  <Card title="👥 Participant Support" icon="headset">
-    **Email:** explorer@crosspurpose.org
-    
-    For participants who need help with the process, technical issues, or general questions.
+  
+  <Card title="Team Guide" icon="users" href="/cp/snap-team-guide">
+    Guide for coaches and administrators
   </Card>
-
-  <Card title="💻 Technical Issues" icon="code">
-    **Developer:** Richard Michalka
-    
-    For website bugs, email delivery problems, or system errors.
-  </Card>
-
-  <Card title="💰 Finance/Payments" icon="money-check-dollar">
-    **Finance Team:** Lisa Cacciatore
-    
-    For payment processing, bank transfers, gift cards, and TFA Forms access.
-  </Card>
-
-  <Card title="📋 Program Policy" icon="clipboard-list">
-    **Program Manager:** Cynthia Lopez
-    
-    For eligibility questions, deadline extensions, and program policy decisions.
+  
+  <Card title="Salesforce Sync" icon="cloud" href="/cp/snap-salesforce">
+    Salesforce integration details
   </Card>
 </CardGroup>
 
-<Tip>
-**Route questions to the right person for fastest resolution!**
+## Related Documentation
 
-Don't send technical issues to finance or policy questions to the developer.
-</Tip>
-
----
-
-## 📋 Launch Readiness
-
-### System Status
-
-<CardGroup cols={3}>
-  <Card title="✅ Technical" icon="server">
-    - [x] Database migration complete
-    - [ ] Test email sent
-    - [ ] Mobile review done
-    - [ ] TFA Forms verified
-  </Card>
-
-  <Card title="✅ Team" icon="users">
-    - [ ] Coaches briefed
-    - [ ] Finance ready
-    - [ ] Support plan active
-  </Card>
-
-  <Card title="✅ Data" icon="database">
-    - [ ] 133 participants verified
-    - [ ] Deadline communicated
-    - [ ] Metrics tracking ready
-  </Card>
-</CardGroup>
-
-<Check>
-**All systems are ready for launch!**
-
-Complete the remaining checklist items and you're good to go.
-</Check>
-
----
-
-## 🎉 Community Impact
-
-<Info>
-**Making a Real Difference for Families in Need**
-</Info>
-
-### By the Numbers
-
-| Metric | Impact |
-|--------|--------|
-| 👨‍👩‍👧‍👦 **Families Helped** | 133 families eligible |
-| 💵 **Per Family** | $100 emergency assistance |
-| 💰 **Total Potential** | $13,300 community investment |
-| 🕒 **Critical Timing** | During SNAP payment delays |
-| ⏱️ **Fast Deployment** | Funds within days of submission |
-
-### What This Means
-
-<CardGroup cols={2}>
-  <Card title="🛒 Immediate Relief" icon="basket-shopping">
-    - Groceries for a week
-    - Diapers and baby essentials
-    - Household necessities
-    - Emergency supplies
-  </Card>
-
-  <Card title="💙 Lasting Impact" icon="heart">
-    - Reduced financial stress
-    - Community support demonstrated
-    - Trust building with participants
-    - Hope during challenging times
-  </Card>
-</CardGroup>
-
-<Check>
-**This is why we do what we do!**
-
-Showing up for our community when they need us most. Every dollar makes a real difference in a family's life.
-</Check>
-
----
-
-## 📚 Additional Resources
-
-<CardGroup cols={2}>
-  <Card title="📘 Technical Documentation" icon="book">
-    - `SNAP_EMERGENCY_ASSISTANCE.md`
-    - `SNAP_ASSISTANCE_IMPLEMENTATION_SUMMARY.md`
-    - `SNAP_EMAIL_NOTIFICATION_GUIDE.md`
-  </Card>
-
-  <Card title="👥 Participant Resources" icon="user-group">
-    - `SNAP_ASSISTANCE_USER_FLOW_EXPLAINED.md`
-    - Direct access: `portal.crosspurpose.org/snap-assistance`
-  </Card>
-</CardGroup>
-
----
-
-## 🚀 Ready to Launch
-
-<CardGroup cols={5}>
-  <Card title="1️⃣ System" icon="check">
-    **Ready**
-    
-    All tech tested
-  </Card>
-
-  <Card title="2️⃣ Emails" icon="check">
-    **Beautiful**
-    
-    Mobile optimized
-  </Card>
-
-  <Card title="3️⃣ Process" icon="check">
-    **Smooth**
-    
-    10 min flow
-  </Card>
-
-  <Card title="4️⃣ Participants" icon="check">
-    **133 Waiting**
-    
-    Verified & ready
-  </Card>
-
-  <Card title="5️⃣ Deadline" icon="check">
-    **Clear**
-    
-    Nov 4, 5 PM
-  </Card>
-</CardGroup>
+- [Phase System Overview](/cp/phases)
+- [Coach Dashboard](/cp/coach-dashboard)
+- [Participant Portal](/cp/participant-portal)
+- [Salesforce Integration](/cp/salesforce)
 
 ---
 
 <Note>
-# 🍎
-
-**Just click that "Send" button and help some families!**
-
-Everything is set up, tested, and ready to go. 133 families are waiting for this critical assistance during a challenging time.
-
-Questions? Ask **Richard**, **Cynthia**, or **Lisa** anytime!
+  **Questions or Issues?** Contact the development team or check the [GitHub repository](https://github.com/sabreil/docs) for the latest updates.
 </Note>
 
----
-
-<Info>
-**Last Updated:** October 30, 2024  
-**Status:** 🟢 Ready for Production  
-**Prepared by:** Richard Michalka
-</Info>

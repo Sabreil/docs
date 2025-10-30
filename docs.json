@@ -27,19 +27,40 @@
       "url": "https://github.com/sabreil/docs"
     }
   ],
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Programs",
-        "groups": [
-          {
-            "group": "Emergency Assistance",
-            "pages": ["cp/SNAP-Assistance"]
-          }
-        ]
-      }
-    ]
-  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "index",
+        "cp/quick-start"
+      ]
+    },
+    {
+      "group": "Programs",
+      "pages": [
+        "cp/SNAP-Assistance",
+        "cp/phase-system",
+        "cp/explorer-journey"
+      ]
+    },
+    {
+      "group": "User Guides",
+      "pages": [
+        "cp/participants",
+        "cp/coaches",
+        "cp/administrators"
+      ]
+    },
+    {
+      "group": "Technical Documentation",
+      "pages": [
+        "cp/technical-overview",
+        "cp/api-reference",
+        "cp/salesforce-integration",
+        "cp/database-schema"
+      ]
+    }
+  ],
   "footerSocials": {
     "github": "https://github.com/sabreil/docs",
     "linkedin": "https://www.linkedin.com/company/luminancellc"
