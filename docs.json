@@ -1,31 +1,66 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Luminance LLC Documentation",
+  "name": "Luminance LLC",
+  "theme": "mint",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://luminancellc.com"
   },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#7c3aed",
-    "light": "#17a14c",
-    "dark": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#6d28d9",
+    "background": {
+      "light": "#ffffff",
+      "dark": "#0f172a"
+    },
     "anchors": {
       "from": "#7c3aed",
-      "to": "#17a14c"
+      "to": "#10b981"
+    }
+  },
+  "topbar": {
+    "style": "gradient"
+  },
+  "navbar": {
+    "style": "default",
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@luminancellc.com",
+        "icon": "envelope"
+      },
+      {
+        "label": "Portal",
+        "href": "https://portal.crosspurpose.org",
+        "icon": "house"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://portal.crosspurpose.org/register"
     }
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "📚 Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
               "quickstart",
               "development"
+            ]
+          },
+          {
+            "group": "🍎 CrossPurpose Programs",
+            "pages": [
+              "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
             ]
           },
           {
@@ -36,7 +71,7 @@
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Writing Content",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -45,32 +80,26 @@
             ]
           },
           {
-            "group": "AI tools",
+            "group": "AI Tools",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
               "ai-tools/windsurf"
             ]
-          },
-          {
-            "group": "CrossPurpose Programs",
-            "pages": [
-              "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
-            ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "🔌 API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "API Documentation",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Endpoints",
             "pages": [
               "api-reference/endpoint/get",
               "api-reference/endpoint/create",
@@ -86,46 +115,66 @@
         {
           "anchor": "CrossPurpose Portal",
           "href": "https://portal.crosspurpose.org",
-          "icon": "house"
+          "icon": "house",
+          "color": "#7c3aed"
         },
         {
           "anchor": "GitHub",
-          "href": "https://github.com/sabreil",
-          "icon": "github"
+          "href": "https://github.com/sabreil/docs",
+          "icon": "github",
+          "color": "#10b981"
+        },
+        {
+          "anchor": "Community",
+          "href": "https://discord.gg/luminancellc",
+          "icon": "discord",
+          "color": "#5865F2"
         }
       ]
     }
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@luminancellc.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Portal",
-      "href": "https://portal.crosspurpose.org"
+  "backgroundImage": "/images/background.png",
+  "analytics": {
+    "posthog": {
+      "apiKey": "YOUR_POSTHOG_KEY"
     }
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "cursor"
+    ]
   },
+  "seo": {
+    "indexHiddenPages": false
+  },
+  "redirects": [
+    {
+      "source": "/cp",
+      "destination": "/SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
+    }
+  ],
   "footer": {
     "socials": {
       "github": "https://github.com/sabreil",
-      "linkedin": "https://linkedin.com/company/luminancellc"
+      "linkedin": "https://linkedin.com/company/luminancellc",
+      "twitter": "https://twitter.com/luminancellc"
     }
   }
 }
-
