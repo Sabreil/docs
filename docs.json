@@ -34,73 +34,56 @@
       "url": "https://github.com/sabreil/docs"
     }
   ],
-  "navigation": {
-    "tabs": [
-      {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "CrossPurpose Programs",
-            "pages": [
-              "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing Content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI Tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoints",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
-        ]
-      }
-    ]
-  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "index",
+        "quickstart",
+        "development"
+      ]
+    },
+    {
+      "group": "CrossPurpose Programs",
+      "pages": [
+        "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
+      ]
+    },
+    {
+      "group": "Customization",
+      "pages": [
+        "essentials/settings",
+        "essentials/navigation"
+      ]
+    },
+    {
+      "group": "Writing Content",
+      "pages": [
+        "essentials/markdown",
+        "essentials/code",
+        "essentials/images",
+        "essentials/reusable-snippets"
+      ]
+    },
+    {
+      "group": "AI Tools",
+      "pages": [
+        "ai-tools/cursor",
+        "ai-tools/claude-code",
+        "ai-tools/windsurf"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete",
+        "api-reference/endpoint/webhook"
+      ]
+    }
+  ],
   "footerSocials": {
     "github": "https://github.com/sabreil",
     "linkedin": "https://linkedin.com/company/luminancellc",
