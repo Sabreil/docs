@@ -1,8 +1,9 @@
 {
-  "name": "Luminance LLC",
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Luminance LLC Documentation",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -14,36 +15,117 @@
       "to": "#17a14c"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:support@luminancellc.com"
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "quickstart",
+              "development"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "essentials/settings",
+              "essentials/navigation"
+            ]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "AI tools",
+            "pages": [
+              "ai-tools/cursor",
+              "ai-tools/claude-code",
+              "ai-tools/windsurf"
+            ]
+          },
+          {
+            "group": "CrossPurpose Programs",
+            "pages": [
+              "SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API reference",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "CrossPurpose Portal",
+          "href": "https://portal.crosspurpose.org",
+          "icon": "house"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/sabreil",
+          "icon": "github"
+        }
+      ]
     }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://portal.crosspurpose.org"
   },
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "index",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "CrossPurpose Programs",
-      "pages": [
-        "cp/SNAP_ASSISTANCE_PROGRAM_TEAM_GUIDE"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/introduction"
-      ]
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@luminancellc.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Portal",
+      "href": "https://portal.crosspurpose.org"
     }
-  ]
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/sabreil",
+      "linkedin": "https://linkedin.com/company/luminancellc"
+    }
+  }
 }
+
